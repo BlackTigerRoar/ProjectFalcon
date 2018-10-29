@@ -1,3 +1,56 @@
+# Candidate Name: Shen-Yu Sun 
+## Falcon - Takes Bird to Fly Higher and Further!
+This is a comprehensive Automation Framework called "Project Falcon" that I built it from the gorund up.
+It is very scalable, followed DRY principle, and ready to expand! It can supports one phone, or multiple phones at the same time. It will detect the devices that's connected to the system by adb command. The test is easy to ready, and it's very simple to control the UI object by code. I would love to continue to work on this project.
+
+## The tools that I used:
+- Development Environemnt: macOS. IDE: IntelliJ
+- Phone Tested: Samsung note 8
+- Android Version: 8.0.0 Oreo
+- The language that I used: JAVA - Since I am going to build automation for Android, may as well use Java (version 8).
+- Appium - It supports Android, and iOS, and it works like Selenium which I am familiar with. 
+- Junit - For test case purpose - Organized the test cases into different classes. ( Need to build xml report in the future. )
+- log4j - Record the logs.
+- Tessdata - Optical Character Recognition
+
+## Framework Layout
+Packages/Classes: 
+- FalconCore: This holds the core methods. The low-level methods that we need for framework to function.
+- FalconCore.captains: Classes that are going to be making some major decisions. (Time stampe, Test Rules, Start framework server, etc)
+- FalconCore.constants: To holds all the constants. //todo
+- FalconAPI: This holds all the APIs that Falcon has for different Phones (Android, iPhone(//todo)), and Apps.
+- FalconAPI.apps.bird: This package holds classes contains APIs for initial bird screen, rental agreement screen, rider screen, etc.
+- Interface: Acitivity, Application. Those two interface give standard app methods.
+- ADB class is implemented for controling device purpose.
+- UiObject, and UiSelector classes are simply UI selector and follow DRY priciple.
+- FalconRunner - Main - it kicks off junit core.
+- Funtionality, Navigation, TestController - classes for test cases.
+
+## Bugs that I found while testing
+Issue 1: If email contains "@" sign, then invalid toast message will not show up.
+- Bird version: 4.7.2.2
+- Reproduce Steps: 
+  1. Open Bird
+  2. Click "ENTER EMAIL"
+  3. Type something like: 123@ - no invalid email toast message.
+  4. Get rid of "@" - invalid email toast message show up.
+ - Priority: low. no funtional impact.
+ - Suggestion fix: Dev team to implement rule for valindation.
+ 
+Issue 2: Rental Agreement back arrow button is not work. User stuck there until they check two agreement check box, and click 'I agree'.
+- Bird version: 4.7.2.2
+- Reproduce Steps:
+   1. Open Bird
+   2. Click "ENTER EMAIL"
+   3. Enter an valid email, and then click "RIDE"
+   4. Click "ALLOW" on "Allow Bird to access this device's location?"
+   5. At the Rental Agreement page. Hit Back arrow button on the top left. It would not take you back.
+   6. Kill the app. Re-launch it. It directly takes you to agreement page. 
+- Priority: low. no funtional impact, but may creates bad user interface feeling to the customers.
+- Suggestion fix: Make sure the back button takes the user back to the initial screen.
+
+--------------------
+
 # Bird Engineering: Automation Exercise
 
 Thank you for your continued interest in Bird!
