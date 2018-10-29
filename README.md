@@ -49,6 +49,12 @@ Issue 2: Rental Agreement back arrow button is not work. User stuck there until 
 - Priority: low. no funtional impact, but may creates bad user interface feeling to the customers.
 - Suggestion fix: Make sure the back button takes the user back to the initial screen.
 
+## Insutrction for running
+1. Pull the project. Make ANDROID_HOME in class "ServerCaptain.java" is set to your android sdk path.
+2. Download appium from http://appium.io/ , and make sure server is running on 127.0.0.1:4723. Check FlightCaptain.java for more info.
+3. You should run appium-doctor to make sure your environment is Appium ready!  https://github.com/appium/appium-doctor
+4. Make sure device is connected to usb, and USB debug mode is turn on.   Run adb from your android home  to make sure "adb devices".
+5. If environemnt setup correctly, then you should be able to just run the main funtion in FalconRunner.java
 --------------------
 
 # Bird Engineering: Automation Exercise
