@@ -1,5 +1,6 @@
 package FalconAPI.apps.bird.birdEyeView;
 
+import FalconAPI.android.Android;
 import FalconCore.UiObject;
 import FalconCore.UiSelector;
 
@@ -46,7 +47,7 @@ public class BirdEyeViewUiObjects {
 
     public UiObject scanButton(){
         if (scanButton == null){
-            scanButton = new UiSelector().resourceId("co.bird.android:id/scanButton").createiObject();
+            scanButton = new UiSelector().resourceId(Android.app.bird.packageId()+":id/scanButton").createiObject();
         }
 
         return scanButton;

@@ -13,6 +13,8 @@ public class UiObject {
 
     private String pointer;
 
+
+
     UiObject(String pointer){
         this.pointer = pointer;
         //System.out.println(this.pointer);
@@ -23,6 +25,7 @@ public class UiObject {
     private boolean isXpath(){
         return !pointer.contains("UiSelector");
     }
+
 
     // We need a way to find out whether or not button, tab, etc is there or not.
     // A method to check if it is exists or not.
